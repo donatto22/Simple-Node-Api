@@ -26,6 +26,7 @@ create procedure register(username2 varchar(20), email2 varchar(50), password2 v
     end $$
 
 # Registrando usuario de Prueba
+# Ejecutar luego de crear toda la base de datos
 call register("Axurtel", "axu@gmail.com", "axu123");
 call register("Valnov", "val_2@hotmail.com", "secure_password");
 
