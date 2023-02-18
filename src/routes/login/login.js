@@ -27,4 +27,20 @@ router.post('/login', async (req, res) => {
     }
 })
 
+
+router.post('/register', async (req, res) => {
+    const { username, email, password } = req.body
+
+    try {
+        await sql.execute(`call register("${username}", "${email}", "${password}")`)
+
+        // Dependiento de regla de negocio, se envía un mensaje
+        // O puede logearse ni bien se registre
+        // Se tendrá hacer el proceso de login
+        res.json({ message: "Registro exitoso" })
+    } catch(e) {
+        res.json({ message: "Ocurrió un error al registrar el usuario" })
+    }
+})
+
 module.exports = router
