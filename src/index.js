@@ -29,6 +29,7 @@ app.use(express.json())
 app.use(require('./routes/index.js'))
 app.use(require('./routes/auth.js'))
 app.use(require('./routes/books.js'))
+app.use(require('./routes/login/login.js'))
 
 // Server
 app.listen(app.get('port'), () => {
